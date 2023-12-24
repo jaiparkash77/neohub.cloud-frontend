@@ -51,7 +51,7 @@ const Register = () => {
                       name="username"
                       value={user.username}
                       onChange={handleInput}
-                      placeholder="username"
+                      placeholder="Username"
                     />
                   </div>
                   <div>
@@ -61,7 +61,7 @@ const Register = () => {
                       name="email"
                       value={user.email}
                       onChange={handleInput}
-                      placeholder="email"
+                      placeholder="Email"
                     />
                   </div>
                   <div>
@@ -71,6 +71,7 @@ const Register = () => {
                       name="phone"
                       value={user.phone}
                       onChange={handleInput}
+                      placeholder='Phone Number'
                     />
                   </div>
                   <div>
@@ -80,7 +81,7 @@ const Register = () => {
                       name="password"
                       value={user.password}
                       onChange={handleInput}
-                      placeholder="password"
+                      placeholder="Password"
                     />
                   </div>
                   <br />
