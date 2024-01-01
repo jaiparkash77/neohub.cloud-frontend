@@ -56,6 +56,12 @@ li {
   list-style: none;
 }
 
+/* react toastify css */
+.toastBody {
+  font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
+  font-size: 1.7rem;
+}
+
 /*? layout Rule  */
 
 .container {
@@ -246,9 +252,9 @@ a.active {
   a.active {
     color: #747bff;
   }
-  button {
+  /* button {
     background-color: #f9f9f9;
-  }
+  } */
 }
 
 /* error page  */
