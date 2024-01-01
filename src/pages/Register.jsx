@@ -36,9 +36,9 @@ const Register = () => {
         },
         body: JSON.stringify(user),
       })
+      const res_data = await response.json();
+      console.log("Response from server", res_data)
       if(response.ok){
-        const res_data = await response.json();
-        console.log("Response from server", res_data)
         // stored token in the localhost
         storeTokenInLS(res_data.token);
 
@@ -49,6 +49,8 @@ const Register = () => {
           password: "",
         })
         navigate("/login");      
+      }else{
+        alert(res_data.extraDetails ? res_data.extraDetails : res_data.message);
       }
       console.log(response);
     } catch (error) {
