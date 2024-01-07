@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useAuth } from '../../store/auth';
-
+import { toast } from 'react-toastify';
 
 const AdminUpdate = () => {
   const [data, setData] = useState({
@@ -42,6 +42,29 @@ const AdminUpdate = () => {
     }
   }
 
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`http://localhost:5000/api/admin/user/${params.id}`, {
+          method: "PATCH",
+          headers:{
+            'Content-Type': 'application/json',
+            Authorization : authorizationToken
+          },
+          body: JSON.stringify(data)
+      });
+
+      if(response.ok){
+        toast.success("Updated Successfully");
+      }else{
+        toast.error("Not Updated")
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(()=>{
     getSingleUserData();
 
@@ -58,7 +81,7 @@ const AdminUpdate = () => {
             
             {/* Main contact form code  */}
             <section className="section-form">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div>
                   <label htmlFor="username">Username</label>
                   <input
