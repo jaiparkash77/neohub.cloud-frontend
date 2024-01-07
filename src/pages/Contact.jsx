@@ -90,7 +90,7 @@ const Contact = () => {
                 <div>
                   <label htmlFor="email">Email</label>
                   <input
-                    type="text"
+                    type="email"
                     name="email"
                     value={contact.email}
                     onChange={handleInput}

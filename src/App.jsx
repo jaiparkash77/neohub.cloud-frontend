@@ -10,8 +10,9 @@ import Error from "./pages/Error";
 import Footer from "./components/Footer/Footer";
 import Logout from "./pages/Logout";
 import AdminLayout from "./components/layout/AdminLayout";
-import AdminUsers from "./pages/AdminUsers";
-import AdminContacts from "./pages/AdminContacts";
+import AdminUsers from "./pages/admin/AdminUsers";
+import AdminContacts from "./pages/admin/AdminContacts";
+import AdminUpdate from "./pages/admin/AdminUpdate";
 
 const App = () =>{
   return <>
@@ -29,6 +30,7 @@ const App = () =>{
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="users" element={<AdminUsers />} />
           <Route path="contacts" element={<AdminContacts />} />
+          <Route path="user/edit/:id" element={<AdminUpdate />} />
         </Route>
       </Routes>
       <Footer />
