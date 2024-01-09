@@ -15,7 +15,6 @@ const Register = () => {
   const {storeTokenInLS} = useAuth();
 
   const handleInput = (e) => {
-    console.log(e);
     let name = e.target.name;
     let value = e.target.value;
 
@@ -28,7 +27,6 @@ const Register = () => {
   // handle form on submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
     try {
       const response = await fetch("http://localhost:5000/api/auth/register", {
         method: "POST",
@@ -38,11 +36,9 @@ const Register = () => {
         body: JSON.stringify(user),
       })
       const res_data = await response.json();
-      console.log("Response from server", res_data)
       if(response.ok){
         // stored token in the localhost
         storeTokenInLS(res_data.token);
-
         setUser({
           username: "",
           email: "",
@@ -56,7 +52,6 @@ const Register = () => {
       }else{
         toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message);
       }
-      console.log(response);
     } catch (error) {
       console.log("Register ", error)
     }

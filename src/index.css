@@ -17,7 +17,7 @@ html {
   font-size: 62.5%;
 }
 
-/*? base style */
+/* base style */
 
 body {
   margin: 0;
@@ -434,7 +434,28 @@ a.active {
     }
   }
 }
-/* 
+
+/* Admin Dashboard */
+
+.admin-contacts-section h1{
+  color: var(--btn-color);
+  font-size: 3rem;
+}
+
+.admin-users-section h1{
+  color: var(--btn-color);
+  font-size: 3rem;
+}
+
+th{
+  background-color: var(--helper-color);
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  padding: 3rem;
+  text-align: center;
+  color: var(--bg-color);
+  width: 30rem;
+}
 
 td{
   font-size: 1.7rem;
@@ -534,7 +555,7 @@ body tr{
 
     }
   }
-} */
+}
 
 /** -----------------------
 ** media query section css

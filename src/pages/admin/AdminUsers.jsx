@@ -17,7 +17,6 @@ const AdminUsers = () => {
             });
 
             const data = await response.json();
-            console.log(`Users ${data}`)
             setUsers(data);
         } catch (error) {
             console.log(error)
@@ -35,7 +34,6 @@ const AdminUsers = () => {
             });
 
             const data = await response.json();
-            console.log(`User after delete ${data}`);
 
             if(response.ok){
                 getAllUsersData();

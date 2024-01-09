@@ -13,7 +13,6 @@ const Login = () => {
   const {storeTokenInLS} = useAuth();
 
   const handleInput = (e) => {
-    console.log(e);
     let name = e.target.name;
     let value = e.target.value;
 
@@ -26,7 +25,6 @@ const Login = () => {
   // handle form on submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
     try {
       const response = await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
@@ -36,7 +34,6 @@ const Login = () => {
         body: JSON.stringify(user),
       })
       const res_data = await response.json();
-      console.log("Response from server", res_data);
 
       if(response.ok){
         // stored token in the localhost
@@ -53,7 +50,6 @@ const Login = () => {
       }else{
         toast.error(res_data.extraDetails ? res_data.extraDetails : res_data.message)
       }
-      console.log(response);
       
     } catch (error) {
       console.log("Login", error);

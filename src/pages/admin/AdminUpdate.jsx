@@ -11,7 +11,6 @@ const AdminUpdate = () => {
   });
 
   const params = useParams();
-  console.log(params)
   const { authorizationToken } = useAuth();
 
   const handleInput = (e) => {
@@ -35,7 +34,6 @@ const AdminUpdate = () => {
       });
 
       const data = await response.json();
-      console.log(`User data ${data}`);
       setData(data)
     } catch (error) {
       console.log(error)

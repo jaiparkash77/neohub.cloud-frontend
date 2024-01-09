@@ -6,7 +6,6 @@ import { useAuth } from '../../store/auth';
 
 const AdminLayout = () => {
     const {user, isLoading} = useAuth();
-    console.log("user on admin layout", user);
 
     if(isLoading){
         return <h1>Loading...</h1>
@@ -22,10 +21,10 @@ const AdminLayout = () => {
             <div className="container">
                 <nav>
                     <ul>
+                        <li><NavLink to={"/"}><FaHome /> Home</NavLink></li>
+                        <li><NavLink to={"/services"}><FaRegListAlt /> Services</NavLink></li>
                         <li><NavLink to={"/admin/users"}><FaUser /> Users</NavLink></li>
                         <li><NavLink to={"/admin/contacts"}><FaMessage /> Contacts</NavLink></li>
-                        <li><NavLink to={"/services"}><FaRegListAlt /> Services</NavLink></li>
-                        <li><NavLink to={"/"}><FaHome /> Home</NavLink></li>
                     </ul>
                 </nav>
             </div>

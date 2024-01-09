@@ -48,8 +48,7 @@ const Contact = () => {
       })
       if(response.ok){
         setContact(defaultContactFormData);  
-        const data = await response.json();    
-        console.log(data);
+        const data = await response.json(); 
         toast.success("Submission successful. We will contact you soon.")
       }
     } catch (error) {

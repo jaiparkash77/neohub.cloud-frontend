@@ -16,7 +16,6 @@ export const AuthProvider = ({ children }) =>{
 
     // Check logged in or not
     let isLoggedIn = !!token;
-    console.log(isLoggedIn);
 
     // Logout Functionality
     const LogoutUser = () =>{
@@ -38,11 +37,9 @@ export const AuthProvider = ({ children }) =>{
 
             if(response.ok){
                 const data = await response.json();
-                console.log("User Data", data.userData)
                 setUser(data.userData);
                 setIsLoading(false);
             }else{
-                console.log("Error fetching user data");
                 setIsLoading(false);
             }
 
@@ -60,7 +57,6 @@ export const AuthProvider = ({ children }) =>{
 
             const data = await response.json();
             setServices(data.message)
-            console.log(data.message);
         } catch (error) {
             console.log(`Services frontend error ${error}`)
         }

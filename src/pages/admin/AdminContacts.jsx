@@ -17,7 +17,6 @@ const AdminContacts = () => {
           });
 
           const data = await response.json();
-          console.log(`Contects ${data}`)
           if(response.ok){
             setContacts(data);
           }
@@ -37,7 +36,6 @@ const AdminContacts = () => {
       });
 
       const data = await response.json();
-      console.log(`Contacts after delete ${data}`);
 
       if(response.ok){
         getAllContactsData();
@@ -62,15 +60,27 @@ const AdminContacts = () => {
               <h1>Admin Contacts Data</h1>
           </div>
           <div className="container admin-users">
-            {contacts.map((contact)=>{
-              const {_id, username, email, message} = contact;
-                return <div key={_id}>
-                  <p>{username}</p>
-                  <p>{email}</p>
-                  <p>{message}</p>
-                  <button className='btn' onClick={()=> deleteContact(_id)}>Delete</button>
-                </div>
-            })}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email Address</th>
+                        <th>Message</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {contacts.map((contact)=>{
+                  const {_id, username, email, message} = contact;
+                    return <tr key={_id}>
+                        <td>{username}</td>
+                        <td>{email}</td>
+                        <td>{message}</td>
+                        <td><button className='btn' onClick={()=> deleteContact(_id)}>Delete</button></td>
+                    </tr>
+                })}
+                </tbody>
+            </table>
           </div>
       </section>
     </>
